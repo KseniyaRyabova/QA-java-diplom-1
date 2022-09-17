@@ -1,24 +1,31 @@
 import org.junit.Test;
-import org.mockito.Mockito;
+import org.mockito.Mock;
 import praktikum.Bun;
 
 import static org.junit.Assert.assertEquals;
 
 public class BunTest {
+    @Mock
+    Bun bun;
 
     @Test
     public void getBunPriceTest() {
+        float price = 2F;
+        Bun bun = new Bun("Mockito.anyString()", price);
+        System.out.println(bun.getPrice());
+
         Float expected = 2F;
-        Bun bun = new Bun(Mockito.anyString(), expected);
         Float actual = bun.getPrice();
-        assertEquals("Цена булочки была незаконно изменена", actual, expected);
+        assertEquals("Цена булочки была незаконно изменена", expected, actual);
     }
 
     @Test
     public void getBunNameTest() {
+        String bunName = "Имя";
+        Bun bun = new Bun(bunName, 1F);
+
         String expected = "Имя";
-        Bun bun = new Bun(expected, Mockito.anyFloat());
         String actual = bun.getName();
-        assertEquals("Имя булочки было незаконно изменено", actual, expected);
+        assertEquals("Имя булочки было незаконно изменено", expected, actual);
     }
 }
