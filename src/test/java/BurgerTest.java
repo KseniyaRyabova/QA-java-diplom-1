@@ -53,7 +53,7 @@ public class BurgerTest {
         String bunName = bun.getName();
         String ingredientType = ingredient.getType().toString().toLowerCase(Locale.ROOT);
         String ingredientName = ingredient.getName();
-        Float burgerPrice = burger.getPrice();
+        float burgerPrice = burger.getPrice();
 
         Burger burger = new Burger();
         burger.setBuns(bun);
