@@ -7,13 +7,13 @@ public class BunTest {
 
     @Test
     public void getBunPriceTest() {
-        float price = 2F;
+        float price = 2.5f;
         Bun bun = new Bun("Mockito.anyString()", price);
         System.out.println(bun.getPrice());
 
-        Float expected = 2F;
-        Float actual = bun.getPrice();
-        assertEquals("Цена булочки была незаконно изменена", expected, actual);
+        float expected = 2.5f;
+        float actual = bun.getPrice();
+        assertEquals(expected, actual, 0f);
     }
 
     @Test
